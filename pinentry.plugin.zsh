@@ -3,7 +3,7 @@ function pm-ssh-git-test {
 }
 
 function pm-ssh-add-list-test {
-    ssh-add -l 2>&1 > /dev/null && return 0 || return 1
+    ssh-add -l > /dev/null 2>&1 && return 0 || return 1
 }
 
 alias gpg-agent='gpg-agent --pinentry-program "$(which pinentry-mac)"'
