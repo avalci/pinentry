@@ -1,45 +1,27 @@
 # pinentry
 
 
-## ubuntu
+### pre requisitos
 
-### pre
+#### ubuntu
 
-    sudo apt-get install scdaemon gnupg pinentry-gnome3
+    sudo apt-get install scdaemon gnupg pinentry-gnome3 && sudo ln -s /usr/bin/pinentry /usr/local/bin/pinentry
 
-### ~/.gnupg/gpg-agent.conf
+#### macOS
 
-    enable-ssh-support
-    pinentry-program /usr/bin/pinentry
-    default-cache-ttl 60
-    max-cache-ttl 120
-
-### ~/.zshrc
-    # GPG-Agent
-    unset SSH_AGENT_PID
-    if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-    fi
-    export GPG_TTY=$(tty)
-
-## macOS
-
-### pre
-
-    brew install gnupg pinentry-mac
+    brew install gnupg pinentry-mac && sudo ln -s /opt/homebrew/bin/pinentry-mac /usr/local/bin/pinentry
 
 ### ~/.gnupg/gpg-agent.conf
 
     enable-ssh-support
-    pinentry-program /opt/homebrew/bin/pinentry-mac
+    pinentry-program /usr/local/bin/pinentry
     default-cache-ttl 60
     max-cache-ttl 120
 
 ### ~/.zshrc
 
-    gpgconf --kill gpg-agent
-    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-    eval $(gpg-agent --daemon 2>/dev/null)
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) && \
+    gpgconf --launch gpg-agent
 
 ## Links
 
