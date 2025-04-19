@@ -27,6 +27,10 @@
 
 [Artigo Youtube](https://www.youtube.com/watch?v=4298jmhR0cs)
 
+[Artigo Youtube](https://www.youtube.com/watch?v=zR24uTzWDaQ)
+
+[Artigo Medium](https://swjm.blog/the-complete-guide-to-ssh-with-fido2-security-keys-841063a04252)
+
 [Artigo 2](https://opensource.com/article/19/4/gpg-subkeys-ssh)
 
 [Gist](https://gist.github.com/caiodelgadonew/0c1c87244735aa16579e0b778c9724d6)
